@@ -2,82 +2,83 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="project.css">
         <title>グルメ情報</title>
     </head>
     <body>
-        <style>
-            table{
-                width: 70%;
-                border-collapse: collapse;
-            }
-            th, td{
-                border: 1px solid black;
-                padding: 8px;
-                text-align: left;
-            }
-        </style>
-        
-        <h1>飲食店検索サイト</h1>
-        <form action="" method="get">
-            <input type="text" name="query" placeholder="検索キーワードを入力" required>
-            <button type="submit">検索</button>
-        </form>
-
-        <p>飲食店が2件見つかりました！</p>
-        <h2>バグダッドカフェ Bagdadcafe/モータウン MOTOWON</h2>
-        <table>
-            <tr>
-                <td>アクセス</td>
-                <td>京王八王子駅を背にし右手に見えるローソンの隣のビル、ホテルザ・ビーの2階</td>
-            </tr>
-            <tr>
-                <td>住所</td>
-                <td>東京都八王子市明神町４-6-12　ホテル・ザ・ビー八王子（旧八王子プラザホテル）2F</td>
-            </tr>
-            <tr>
-                <td>最寄駅</td>
-                <td>京王八王子</td>
-            </tr>
-            <tr>
-                <td>ジャンル</td>
-                <td>居酒屋</td>
-            </tr>
-            <tr>
-                <td>予算</td>
-                <td>3001〜4000円</td>
-            </tr>
-            <tr>
-                <td>営業時間</td>
-                <td>月～日、祝日、祝前日: 17:00～21:00 （料理L.O. 20:00 ドリンクL.O. 20:00）</td>
-            </tr>
-        </table>
-
-        <h2>隠れ家バル Funny&Bouquet</h2>
-        <table>
-            <tr>
-                <th>アクセス</th>
-                <th>ＪＲ八王子駅北口徒歩1分/京王八王子駅徒歩3分</th>
-            </tr>
-            <tr>
-                <td>住所</td>
-                <td>東京都八王子市東町12-14</td>
-            </tr>
-            <tr>
-                <td>最寄駅</td>
-                <td>京王八王子</td>
-            </tr>
-            <tr>
-                <td>ジャンル</td>
-                <td>居酒屋</td>
-            </tr>
-            <tr>
-                <td>予算</td>
-                <td>2001〜3000円</td>
-            </tr>
-            <tr>
-                <td>営業時間</td>
-                <td>月～日、祝日、祝前日: 17:00～翌5:00 （料理L.O. 翌3:00 ドリンクL.O. 翌4:00）</td>
-            </tr>
-        </table>
+        <div class="base">
+            <div class="menu">
+                <h1>飲食店検索サイト</h1>
+                <form action="" method="get">
+                    <input type="text" name="query" placeholder="地域・ジャンル・予算" required>
+                    <button type="submit">検索</button>
+                </form>
+                <p>飲食店が2件見つかりました！</p>
+                <img src="https://www.takushoku-u.ac.jp/summary/images/TAKUDAI_logo_Sy.jpg" alt="拓大のロゴ">
+            </div>
+            <div class="main">
+                <div class="result">
+                    <h2>バグダッドカフェ Bagdadcafe/モータウン MOTOWON</h2>
+                    <table>
+                        <tr>
+                            <td>アクセス</td>
+                            <td>京王八王子駅を背にし右手に見えるローソンの隣のビル、ホテルザ・ビーの2階</td>
+                        </tr>
+                        <tr>
+                            <td>住所</td>
+                            <td>東京都八王子市明神町４-6-12　ホテル・ザ・ビー八王子（旧八王子プラザホテル）2F</td>
+                        </tr>
+                        <tr>
+                            <td>最寄駅</td>
+                            <td>京王八王子</td>
+                        </tr>
+                        <tr>
+                            <td>ジャンル</td>
+                            <td>居酒屋</td>
+                        </tr>
+                        <tr>
+                            <td>予算</td>
+                            <td>3001〜4000円</td>
+                        </tr>
+                        <tr>
+                            <td>営業時間</td>
+                            <td>月～日、祝日、祝前日: 17:00～21:00 （料理L.O. 20:00 ドリンクL.O. 20:00）</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="result">
+                    <h2>隠れ家バル Funny&Bouquet</h2>
+                    <table>
+                        <tr>
+                            <th>アクセス</th>
+                            <th>ＪＲ八王子駅北口徒歩1分/京王八王子駅徒歩3分</th>
+                        </tr>
+                        <tr>
+                            <td>住所</td>
+                            <td>東京都八王子市東町12-14</td>
+                        </tr>
+                        <tr>
+                            <td>最寄駅</td>
+                            <td>京王八王子</td>
+                        </tr>
+                        <tr>
+                            <td>ジャンル</td>
+                            <td>居酒屋</td>
+                        </tr>
+                        <tr>
+                            <td>予算</td>
+                            <td>2001〜3000円</td>
+                        </tr>
+                        <tr>
+                            <td>営業時間</td>
+                            <td>月～日、祝日、祝前日: 17:00～翌5:00 （料理L.O. 翌3:00 ドリンクL.O. 翌4:00）</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>G484942024, 野村音央</p>
+        </div>
     </body>
 </html>
