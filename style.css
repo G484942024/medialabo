@@ -1,0 +1,50 @@
+body {
+	font-family: "M PLUS Rounded 1c", "sans-serif";
+}
+
+h1 {
+	max-width: 1200px;
+	height: 80px;
+	background-color: #8e61aa;
+	position: static;
+	margin: 0 auto;
+	font-size: 50px;
+	overflow: hidden;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+    color: white;
+}
+
+.base {
+	max-width: 1160px;
+	position: relative;
+	margin: 10px auto;
+    background-color: #ffe3b5;
+	padding: 20px;
+	height: calc(100% - 40px);
+	overflow: auto;
+	border-radius: 10px;
+
+}
+
+.block {
+    background-color: #ffc859;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
+.block h2 {
+	margin: 0 0 10px 0;
+}
+
+.block h3 {
+    border-top: 2px solid black;
+	margin: 0 0 10px 0;
+}
+
+.block p {
+	margin: 0 0 20px 0;
+}
+
