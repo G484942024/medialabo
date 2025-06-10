@@ -34,7 +34,7 @@ h2 {
 
 .main {
     height: calc(100% - 40px);
-    background-color: gray;
+    background-color: cadetblue;
     border-radius: 10px;
     position: absolute;
     left: 310px;
@@ -44,7 +44,7 @@ h2 {
 }
 
 .result {
-    background-color: lightblue;
+    background-color: honeydew;
     border-radius: 10px;
     padding: inherit;
     margin-bottom: 20px;
