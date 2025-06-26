@@ -31,6 +31,24 @@ function print(data) {
     console.log('営業時間: ' + data.results.shop[1].open);
 }
 
+//ユーザが入力した検索キーを表示
+let input1 = document.querySelector('button#input1');
+input1.addEventListener('click', showi1);
+function showi1(){
+    let box1 = document.querySelector('input#input1');
+    let b1 = box1.value;
+    console.log(b1);
+}
+
+let input2 = document.querySelector('button#input2');
+input2.addEventListener('click', showi2);
+function showi2(){
+    let box2 = document.querySelector('input#input2');
+    let b2 = box2.value;
+    console.log(b2);
+}
+
+
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
 
