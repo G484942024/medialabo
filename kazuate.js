@@ -1,42 +1,41 @@
-// 答え
-let kotae = Math.floor(Math.random()*10) + 1;
-kotae = 3
+let kotae = Math.floor(Math.random() * 10) + 1;
 console.log('答え（デバッグ用）: ' + kotae);
 
 // 入力回数（予想回数）
-let kaisu = 0;
+let kk = 0; 
 
-// 予想を4回実行する
-// 将来以下の hantei(); の4回の呼び出しを全て削除する
-// 代わりにここでは，ボタンを押したら hantei() を呼び出すイベント処理をする
-hantei();
-hantei();
-hantei();
-hantei();
+// ボタンが押されたら
+let b = document.querySelector('button#go'); // ボタンを検索
+b.addEventListener('click', hantei); // ボタンに関数を登録
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 function hantei() {
-    // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
-    let yoso = 4;
+    let y = document.querySelector('input#input');
+    let yy = parseInt(y.value);
 
     // 課題3-1: 正解判定する
-    // kotae と yoso が一致するかどうか調べて結果を出力
-    // 課題3-1における出力先はコンソール
-    kaisu++;
-    console.log(kaisu + '回目の予想: ' + yoso);
-    if(kaisu >= 4){
-        console.log('答えは ' + kotae + ' でした. すでにゲームは終わっています');
-    }else{
-        if(yoso === kotae){//Correct
-            console.log('正解です. おめでとう!');
-        }else{//Incorrect
-            if(kaisu === 3){
-                console.log('まちがい. 残念でした答えは ' + kotae + ' です.');
-            }else if(yoso < kotae){
-                console.log('まちがい. 答えはもっと大きいですよ');
-            }else if(yoso > kotae){
-                console.log('まちがい. 答えはもっと小さいですよ');
+    kk++; // 予想回数を増やす
+    console.log(kk);
+
+    let yoso = document.querySelector('span#answer');
+    yoso.textContent = yy;
+
+    let result = document.querySelector('p#result'); // resultをここで定義
+    if (kk >= 4) {
+        result.textContent = ('答えは ' + kotae + ' でした. すでにゲームは終わっています');
+    } else {
+        if (yy === kotae) { // Correct
+            result.textContent = ('正解です. おめでとう!');
+        } else { // Incorrect
+            if (kk === 3) {
+                result.textContent = ('まちがい. 残念でした答えは ' + kotae + ' です.');
+            } else if (yy < kotae) {
+                result.textContent = ('まちがい. 答えはもっと大きいですよ');
+            } else if (yy > kotae) {
+                result.textContent = ('まちがい. 答えはもっと小さいですよ');
             }
         }
     }
 }
+
+
