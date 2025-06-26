@@ -6,6 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
         <title>「Webコンテンツ作成」の成果</title>
     </head>
     <body>
@@ -29,8 +30,8 @@
                 <h3>課題3-1</h3>
                 <p>今回の課題では、数当てゲームの基礎的な機能を書く。<br>
                 プレーヤの予想値入力機能はのちに実装するとして、今回はプレーヤが予想値4を入力したと仮定して制作する。<br>
-                答えは<em>Math.random()</em>を用いて1から10の間の数にする。<br>
-                答え合わせの関数<em>hantei()</em>を複数回実行させる。<br>
+                答えは<code>Math.random()</code>を用いて1から10の間の数にする。<br>
+                答え合わせの関数<code>hantei()</code>を複数回実行させる。<br>
                 プレーヤの答えによって「正解」「予想値よりも大」「予想値よりも小」のいずれかの返事が表示される条件分岐を作成。<br>
                 更に、回答可能回数を超えるとゲームが終わっていることを知らせる機能も書く。
                 <p>
@@ -45,7 +46,7 @@
                 これを解決するために、インデントをきれいに保つことを意識した。<br>
                 そうすることでファイルの構造が見やすくなり、自然と間違っている箇所が見えてくるからだ。<br>
                 ただの文字の羅列であるファイルが、ブラウザ上で思い通りのレイアウトになっていくのを見るのが気持ちよかった。</p>
-                <p>演習の成果: <a href="./practice-html/elements.html">演習1-4: htmlのさまざまな要素</a></p>
+                <p>演習の成果: <a href="./practice-html/elcodeents.html">演習1-4: htmlのさまざまな要素</a></p>
 
                 <h3>第2回 CSSによるWebページの装飾</h3>
                 <p>今回はCSSファイルの書き方及びHTMLとの紐付け方を学んだ。<br>
@@ -57,21 +58,29 @@
                 </p>
 
                 <h3>第3回 JavaScriptの基本</h3>
-                <p>今回はまず、<em>console.log</em>を用いて試験的な数当てゲームを制作した。<br>
-                まず<em>index.html</em>に<em>kazuate.js</em>を読み込ませる。<br>
-                読み込ませる際に、<em>defer</em>を書くこと大事だと学んだ。<br>
+                <p>今回はまず、<code>console.log</code>を用いて試験的な数当てゲームを制作した。<br>
+                まず<code>index.html</code>に<code>kazuate.js</code>を読み込ませる。<br>
+                読み込ませる際に、<code>defer</code>を書くこと大事だと学んだ。<br>
                 なぜならば、それがあるのとないのでjsとcssの実行の順序が入れ替わるからだ。<br>
                 個人的には、プログラムを仮組みして実行させる大切さを学んだ。<br>
                 今回はプレーヤの予想値を4で、4回実行されたと仮定して、その部分までを書いた。<br>
                 こうすることで、大体の動作を掴むことができた。<br>
-                次に<em>project.js</em>を読み込んで、取得した情報を表示するプログラムを書いた。<br>
+                次に<code>project.js</code>を読み込んで、取得した情報を表示するプログラムを書いた。<br>
                 たくさんの情報が複数の配列に分かれて格納されていたので、最初は戸惑った。<br>
                 jsから情報を取得して表示させる方法を学習できた。
                 </p>
                 <p>演習の成果: <a href="./practice-js/obj-practice.html">演習3-6: オブジェクトの参照</a></p>
 
                 <h3>第4回 DOMとJavaScript</h3>
-                <p>今日はむにゃむにゃ</p>
+                <p>今回はjsにDOMを応用することで、よりウェブページをよりインタラクティブなものにした。<br>
+                まず、入力ボックスといっても様々な種類が存在することを学んだ。<br>
+                想定される入力の種類によって、それらを使い分けていく必要がある。<br>
+                次にウェブページの内容をjsでいじる方法を学んだ。<br>
+                <code>document.querySelector()</code>を用いることで、html内の特定の要素に干渉することができる。<br>
+                その後、数当てゲームで実際にユーザの入力を取得して返事を返していく機能を書いた。<br>
+                最後のプロジェクト課題では、入力ボックスとボタンがこんがらがってしまった。<br>
+                それぞれ2つずつ配置されているので、見間違わない名称をつけるのだ大変だった。<br>
+                </p>
 
                 <h3>第5回 イベント処理</h3>
                 <p>今日はぴよぴよ</p>
