@@ -24,7 +24,7 @@ h2 {
 }
 
 .menu {
-    height: 400px;
+    height: 100%;
     width: 300px;
     background-color: lightgreen;
     border-radius: 10px;
