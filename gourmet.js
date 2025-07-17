@@ -40,6 +40,7 @@ function showi1(){
     console.log(b1);
 }
 
+/*
 let input2 = document.querySelector('button#input2');
 input2.addEventListener('click', showi2);
 function showi2(){
@@ -47,6 +48,7 @@ function showi2(){
     let b2 = box2.value;
     console.log(b2);
 }
+*/
 
 
 // 課題5-1 の関数 printdom() はここに記述すること
