@@ -1,4 +1,3 @@
-
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
     console.log('1件目の検索結果');
@@ -33,127 +32,142 @@ function print(data) {
 
 //ユーザが入力した検索キーを表示
 let input1 = document.querySelector('button#input1');
-input1.addEventListener('click', showi1);
+input1.addEventListener('click', sendRequest);
+
 function showi1(){
     let box1 = document.querySelector('input#input1');
     let b1 = box1.value;
     console.log(b1);
 }
 
-/*
-let input2 = document.querySelector('button#input2');
-input2.addEventListener('click', showi2);
-function showi2(){
-    let box2 = document.querySelector('input#input2');
-    let b2 = box2.value;
-    console.log(b2);
-}
-*/
+// 課題5-1 の関数 printDom() はここに記述すること
+function printDom(data){
+    let result = document.querySelector('#result');
+    let shops = data.results.shop;
 
+    remove = document.getElementById('words');
+    console.log(remove);
+    //remove.remove();
 
-// 課題5-1 の関数 printdom() はここに記述すること
-// 項目を全て表示するようにしました
-function printdom(data) {
-    let u = document.createElement('ul');
-    let l = document.createElement('li');
+    let shop, div;
+    for(let i=0; i<shops.length; i++){
+        shop = shops[i];
+        div = document.createElement('div');
+        div.setAttribute('id', 'words');
 
-    //検索結果1
-    l.textContent = ('店舗名: ' + data.results.shop[0].name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
+        let h3 = document.createElement('h3');
+        h3.textContent = shop.name;
+        div.insertAdjacentElement('beforeend', h3);
 
-    l.textContent = ('キャッチコピー: ' + data.results.shop[0].catch);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
+        let ul = document.createElement('ul');
+        let li;
+        let items = [
+          { label: 'キャッチコピー', value: shop.catch },
+          { label: 'ジャンル', value: shop.genre.name },
+          //{ label: 'サブジャンル', value: shop.subgenre.name },
+          { label: 'アクセス', value: shop.access },
+          { label: '住所', value: shop.address },
+          { label: '最寄駅', value: shop.station_name },
+          { label: '予算', value: shop.budget.name },
+          { label: '営業日時', value: shop.open }
+        ];
 
-    l.textContent = ('ジャンル: ' + data.results.shop[0].genre.name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-    
-    l.textContent = ('サブジャンル: ' + data.results.shop[0].sub_genre.name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
+        for(let item of items){
+            li = document.createElement('li');
 
-    l.textContent = ('アクセス: ' + data.results.shop[0].access);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
+            let strong = document.createElement('strong');
+            strong.textcontent = item.label + ':';
 
-    l.textContent = ('住所: ' + data.results.shop[0].address);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
+            li.insertAdjacentElement('beforeend', strong);
+            li.insertAdjacentText('beforeend', ' ' + item.value);
 
-    l.textContent = ('最寄駅: ' + data.results.shop[0].station_name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('予算: ' + data.results.shop[0].budget.name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('営業日時: ' + data.results.shop[0].open);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    div = document.querySelector('div#result');
-    div.insertAdjacentElement('afterend', u);
-
-    u.insertAdjacentHTML('beforeend', '<br>');
-    u.insertAdjacentHTML('beforeend', '<br>');
-
-    //検索結果2
-    l.textContent = ('店舗名: ' + data.results.shop[1].name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('キャッチコピー: ' + data.results.shop[1].catch);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('ジャンル: ' + data.results.shop[1].genre.name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-    
-    l.textContent = ('サブジャンル: ' + data.results.shop[1].sub_genre.name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('アクセス: ' + data.results.shop[1].access);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('住所: ' + data.results.shop[1].address);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('最寄駅: ' + data.results.shop[1].station_name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('予算: ' + data.results.shop[1].budget.name);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    l.textContent = ('営業日時: ' + data.results.shop[1].open);
-    u.insertAdjacentElement('beforeend', l);
-    l = document.createElement('li');
-
-    div = document.querySelector('div#result');
-    div.insertAdjacentElement('afterend', u);
+            ul.insertAdjacentElement('beforeend', li);
+        }
+        div.insertAdjacentElement('beforeend', ul);
+        result.insertAdjacentElement('beforeend', div);
+    }
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
-
-
-
-
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
+        let n = document.querySelector('select#input1').value;
+        let id;
+        switch (n) {
+            case '居酒屋':
+                id = 'G001';
+                break;
+            case 'ダイニングバー・バル'://データ消失によりヒット数0
+                id = 'G002';
+                break;
+            case '創作料理':
+                id = 'G003';
+                break;
+            case '和食':
+                id = 'G004';
+                break;
+            case '洋食':
+                id = 'G005';
+                break;
+            case 'イタリアン・フレンチ':
+                id = 'G006';
+                break;
+            case '中華':
+                id = 'G007';
+                break;
+            case '焼肉・ホルモン':
+                id = 'G008';
+                break;
+            case 'アジア・エスニック料理':
+                id = 'G009';
+                break;
+            case '各国料理':
+                id = 'G010';
+                break;
+            case 'カラオケ・パーティ':
+                id = 'G011';
+                break;
+            case 'バー・カクテル':
+                id = 'G012';
+                break;
+            case 'ラーメン':
+                id = 'G013';
+                break;
+            case 'カフェ・スイーツ':
+                id = 'G014';
+                break;
+            case 'その他グルメ':
+                id = 'G015';
+                break;
+            case 'お好み焼き・もんじゃ':
+                id = 'G016';
+                break;
+            case '韓国料理':
+                id = 'G017';
+                break;
 
+        }
+    let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + id + '.json';
+    console.log(id);
+
+    // 通信開始
+    axios.get(url)
+        .then(showResult)   // 通信成功
+        .catch(showError)   // 通信失敗
+        .then(finish);      // 通信の最後の処理
 }
 
 // 課題6-1: 通信が成功した時の処理は以下に記述
 function showResult(resp) {
+    // サーバから送られてきたデータを出力
+    let data = resp.data;
+    if (typeof data === 'string') {
+        data = JSON.parse(data);
+    }
 
+    // data をコンソールに出力
+    console.log(data);
+    printDom(data);
 }
 
 // 課題6-1: 通信エラーが発生した時の処理

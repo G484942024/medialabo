@@ -10,9 +10,14 @@ td{
 
 img {
     height: 180px;
+    padding-top: 20px;
 }
 
 h2 {
+    margin-top: 0px;
+}
+
+h3 {
     margin-top: 0px;
 }
 
@@ -43,10 +48,10 @@ h2 {
     padding: 20px;
 }
 
-.result {
+#words {
     background-color: honeydew;
     border-radius: 10px;
-    padding: inherit;
+    padding: 15px;
     margin-bottom: 20px;
 }
 

@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="project.css">
         <script src="gourmet.js" defer></script>
         <link rel="icon" href="./favicon2.png" type="image/png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
         <title>グルメ情報</title>
     </head>
     <body>
@@ -12,134 +13,36 @@
             <div class="menu">
                 <h1>飲食店検索サイト</h1>
                 <div>
-                    <label for="input1">最寄駅</label>
-                    <input id="input1" type="text" name="label" size="10">
+                    <label for="input1">ジャンル</label>
+                    <select id="input1" name="label">
+                        <option value="">選択してください</option>
+                        <option value="居酒屋">居酒屋</option>
+                        <option value="ダイニングバー・バル">ダイニングバー・バル</option>
+                        <option value="創作料理">創作料理</option>
+                        <option value="和食">和食</option>
+                        <option value="洋食">洋食</option>
+                        <option value="イタリアン・フレンチ">イタリアン・フレンチ</option>
+                        <option value="中華">中華</option>
+                        <option value="焼肉・ホルモン">焼肉・ホルモン</option>
+                        <option value="アジア・エスニック料理">アジア・エスニック料理</option>
+                        <option value="各国料理">各国料理</option>
+                        <option value="カラオケ・パーティ">カラオケ・パーティ</option>
+                        <option value="バー・カクテル">バー・カクテル</option>
+                        <option value="ラーメン">ラーメン</option>
+                        <option value="カフェ・スイーツ">カフェ・スイーツ</option>
+                        <option value="その他グルメ">その他グルメ</option>
+                        <option value="お好み焼き・もんじゃ">お好み焼き・もんじゃ</option>
+                        <option value="韓国料理">韓国料理</option>
+                    </select>
                     <button id="input1">検索</button>
                 </div>
-                <div>
-                    <label for="input2">ジャンル</label>
-                    <input id="input2" type="text" name="label" size="12">
-                    <button id="input2">検索</button>
-                </div>
-                <p>飲食店が2件見つかりました！</p>
                 <img src="https://www.takushoku-u.ac.jp/summary/images/TAKUDAI_logo_Sy.jpg" alt="拓大のロゴ">
             </div>
+
             <div class="main">
-                <div class="result">
-                    <!--破壊
-                    <h2>候補2</h2>
-                    <table>
-                        <tr>
-                            <td>店舗名</td>
-                            <td>バグダッドカフェ Bagdadcafe/モータウン MOTOWN</td>
-                        </tr>
-                        <tr>
-                            <td>キャッチコピー</td>
-                            <td>【サプライズ演出有】 結婚パーティー受付中</td>
-                        </tr>
-                        <tr>
-                            <td>ジャンル</td>
-                            <td>居酒屋</td>
-                        </tr>
-                        <tr>
-                            <td>サブジャンル</td>
-                            <td>ダイニングバー・バル</td>
-                        </tr>
-                        <tr>
-                            <td>アクセス</td>
-                            <td>京王八王子駅を背にし右手に見えるローソンの隣のビル、ホテルザ・ビーの2階です。</td>
-                        </tr>
-                        <tr>
-                            <td>住所</td>
-                            <td>東京都八王子市明神町４-6-12　ホテル・ザ・ビー八王子（旧八王子プラザホテル）2F</td>
-                        </tr>
-                        <tr>
-                            <td>最寄駅</td>
-                            <td>京王八王子</td>
-                        </tr>
-                        <tr>
-                            <td>予算</td>
-                            <td>3001〜4000円</td>
-                        </tr>
-                        <tr>
-                            <td>営業日時</td>
-                            <td>月～日、祝日、祝前日: 17:00～21:00 （料理L.O. 20:00 ドリンクL.O. 20:00）</td>
-                        </tr>
-                    </table>
-
-                    <br>
-
-                    <h2>候補2</h2>
-                    <table>
-                        <tr>
-                            <td>店舗名</td>
-                            <td>隠れ家バル Funny&Bouquet</td>
-                        </tr>
-                        <tr>
-                            <td>キャッチコピー</td>
-                            <td>2.5時間飲み放題付2000円~ 【★少人数様ソファー★】</td>
-                        </tr>
-                        <tr>
-                            <td>ジャンル</td>
-                            <td>居酒屋</td>
-                        </tr>
-                        <tr>
-                            <td>サブジャンル</td>
-                            <td>ダイニングバー・バル</td>
-                        </tr>
-                        <tr>
-                            <td>アクセス</td>
-                            <td>ＪＲ八王子駅北口徒歩1分/京王八王子駅徒歩3分</td>
-                        </tr>
-                        <tr>
-                            <td>住所</td>
-                            <td>東京都八王子市東町12-14</td>
-                        </tr>
-                        <tr>
-                            <td>最寄駅</td>
-                            <td>八王子</td>
-                        </tr>
-                        <tr>
-                            <td>予算</td>
-                            <td>2001〜3000円</td>
-                        </tr>
-                        <tr>
-                            <td>営業日時</td>
-                            <td>月～日、祝日、祝前日: 17:00～翌5:00 （料理L.O. 翌3:00 ドリンクL.O. 翌4:00）</td>
-                        </tr>
-                    </table>
-                    -->
-                    <ul>
-                        <li>店舗名: バグダッドカフェ Bagdadcafe/モータウン MOTOWN</li>
-                        <li>キャッチコピー: 【サプライズ演出有】 結婚パーティー受付中</li>
-                        <li>ジャンル: 居酒屋</li>
-                        <li>サブジャンル: ダイニングバー・バル</li>
-                        <li>アクセス: 京王八王子駅を背にし右手に見えるローソンの隣のビル、ホテルザ・ビーの2階です。</li>
-                        <li>住所: 東京都八王子市明神町４-6-12　ホテル・ザ・ビー八王子（旧八王子プラザホテル）2F</li>
-                        <li>最寄駅: 京王八王子</li>
-                        <li>予算: 3001～4000円</li>
-                        <li>営業日時: 月～日、祝日、祝前日: 17:00～21:00 （料理L.O. 20:00 ドリンクL.O. 20:00）</li>
-
-                        <br><br>
-
-                        <li>店舗名: 隠れ家バル Funny&Bouquet</li>
-                        <li>キャッチコピー: 2.5時間飲み放題付2000円~ 【★少人数様ソファー★】</li>
-                        <li>ジャンル: 居酒屋</li>
-                        <li>サブジャンル: ダイニングバー・バル</li>
-                        <li>アクセス: ＪＲ八王子駅北口徒歩1分/京王八王子駅徒歩3分</li>
-                        <li>住所: 東京都八王子市東町12-14</li>
-                        <li>最寄駅: 八王子</li>
-                        <li>予算: 2001～3000円</li>
-                        <li>営業日時: 月～日、祝日、祝前日: 17:00～翌5:00 （料理L.O. 翌3:00 ドリンクL.O. 翌4:00）</li>
-                    </ul>
-                </div>
-                <div class="result">
-                    <div id=result></div>
-                </div>
+                <div id=result></div>
             </div>
         </div>
-        <div class="footer">
-            <p>G484942024, 野村音央</p>
-        </div>
+        <div class="footer"><p>G484942024, 野村音央</p></div>
     </body>
 </html>
