@@ -43,6 +43,7 @@ function showi1(){
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data){
     let result = document.querySelector('#result');
+    result.innerHTML = '';
     let shops = data.results.shop;
 
     remove = document.getElementById('words');
@@ -76,7 +77,7 @@ function printDom(data){
             li = document.createElement('li');
 
             let strong = document.createElement('strong');
-            strong.textcontent = item.label + ':';
+            strong.textContent = item.label + ':';
 
             li.insertAdjacentElement('beforeend', strong);
             li.insertAdjacentText('beforeend', ' ' + item.value);
