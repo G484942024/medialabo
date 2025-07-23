@@ -31,6 +31,7 @@ function print(data) {
 }
 
 //ユーザが入力した検索キーを表示
+// 課題4-2 検索欄の設置
 let input1 = document.querySelector('button#input1');
 input1.addEventListener('click', sendRequest);
 
@@ -39,6 +40,7 @@ function showi1(){
     let b1 = box1.value;
     console.log(b1);
 }
+
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data){
@@ -65,7 +67,7 @@ function printDom(data){
         let items = [
           { label: 'キャッチコピー', value: shop.catch },
           { label: 'ジャンル', value: shop.genre.name },
-          //{ label: 'サブジャンル', value: shop.subgenre.name },
+          { label: 'サブジャンル', value: shop.sub_genre.name },
           { label: 'アクセス', value: shop.access },
           { label: '住所', value: shop.address },
           { label: '最寄駅', value: shop.station_name },
